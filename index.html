@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="script.js">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Tarot Interactivo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>Hello MagicApi!, esto se hace en codespace desde github</p>
+  <h1>🔮 Tarot Interactivo 🔮</h1>
+
+  <div class="controls">
+    <button onclick="barajar()">🔁 Barajar</button>
+    <button onclick="tiradaTres()">✨ Tirada de 3</button>
+    <button onclick="tiradaUna()">🎴 Carta Única</button>
+    <button onclick="guardarLectura()">💾 Guardar lectura</button>
+  </div>
+
+  <div id="tablero" class="tablero"></div>
+
+  <div id="historial" class="historial">
+    <h2>📜 Historial de lecturas</h2>
+    <ul id="listaLecturas"></ul>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
