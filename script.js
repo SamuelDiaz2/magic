@@ -8,27 +8,28 @@ const cartas = [
 
 let mazo = [...cartas];
 
-function barajar() {
+// 👇 Ahora todas las funciones están en window
+window.barajar = function() {
   mazo = [...cartas].sort(() => Math.random() - 0.5);
   document.getElementById("tablero").innerHTML = "";
-}
+};
 
-function mostrarCartas(cartasSeleccionadas) {
+window.mostrarCartas = function(cartasSeleccionadas) {
   const tablero = document.getElementById("tablero");
   tablero.innerHTML = "";
   cartasSeleccionadas.forEach(carta => {
     const div = document.createElement("div");
     div.className = "carta";
     div.textContent = carta.nombre;
-    div.title = carta.significado;
+    div.title = carta.significado; // tooltip al pasar el mouse
     tablero.appendChild(div);
   });
-}
+};
 
-function tiradaTres() {
-  mostrarCartas(mazo.slice(0, 3));
-}
+window.tiradaTres = function() {
+  window.mostrarCartas(mazo.slice(0, 3));
+};
 
-function tiradaUna() {
-  mostrarCartas([mazo[Math.floor(Math.random() * mazo.length)]]);
-}
+window.tiradaUna = function() {
+  window.mostrarCartas([mazo[Math.floor(Math.random() * mazo.length)]]);
+};
